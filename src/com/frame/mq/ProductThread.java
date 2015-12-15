@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
-import org.springframework.stereotype.Service;
 
 /**
  * 消费者
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
  * @version 1.0
  * @date 2015-12-11 下午4:13:24
  */
-@Service
 public class ProductThread extends Thread{
 
 	private String isStop = "false";
