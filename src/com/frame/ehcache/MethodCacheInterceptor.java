@@ -27,14 +27,14 @@ public class MethodCacheInterceptor implements MethodInterceptor,InitializingBea
 	}
 
 	/**
-	 * 后置拦截器
+	 * bean 被初始化后执行
 	 * @author LiZhiXian
 	 * @version 1.0
 	 * @date 2015-12-16 下午3:54:47
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		logger.debug("缓存设置完成");
+		logger.debug(cache + " A cache is required. Use setCache(Cache) to provide one.");
 		
 	}
 
@@ -58,7 +58,8 @@ public class MethodCacheInterceptor implements MethodInterceptor,InitializingBea
             	logger.debug(cacheKey + "加入到缓存： " + cache.getName());
                 // 调用实际的方法
                 result = invocation.proceed();
-                element = new Element(cacheKey, (Serializable) result);
+                //对象要被序列System.out.println
+                element = new Element(cacheKey, (Serializable)result);
                 cache.put(element);
             } else {
             	logger.debug(cacheKey + "使用缓存： " + cache.getName());
@@ -85,7 +86,7 @@ public class MethodCacheInterceptor implements MethodInterceptor,InitializingBea
                 sb.append(".").append(arguments[i]);
             }
         }
-        System.out.println("完整方法名称："+sb.toString());
+        logger.debug("完整方法名称："+sb.toString());
         return sb.toString();
     }
 }

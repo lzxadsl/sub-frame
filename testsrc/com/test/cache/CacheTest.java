@@ -25,7 +25,9 @@ public class CacheTest {
 	@Test
 	public void test(){
 		User user = userService.getUserByName("lzx");
+		User user1 = userService.getUserByName("lsl");
 		//User user = userService.get(1);
 		System.out.println(user.getUsername());
+		System.out.println(user1.getUsername());
 	}
 }
