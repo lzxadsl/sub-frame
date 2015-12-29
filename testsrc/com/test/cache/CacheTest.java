@@ -9,6 +9,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.frame.authority.model.User;
 import com.frame.authority.service.IUserService;
 import com.frame.ehcache.ICacheUserService;
+import com.frame.other.CacheAdapth;
+import com.frame.other.IAdapthService;
 
 /**
  * 
@@ -60,5 +62,13 @@ public class CacheTest {
 		cacheUserService.update(1);
 		cacheUserService.list(1);
 		cacheUserService.list(2);
+	}
+	
+	@Autowired
+	private IAdapthService cacheAdapthTest;
+	
+	@Test
+	public void testAdapth(){
+		cacheAdapthTest.method2();
 	}
 }
