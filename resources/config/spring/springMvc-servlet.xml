@@ -74,10 +74,10 @@
 	</bean> 
 
     
-    <mvc:interceptors>
+    <!-- <mvc:interceptors>
 	    <bean class="com.frame.system.interceptor.WebInterceptor"></bean>
-        <!-- <bean class="com.frame.system.interceptor.WebInterceptor1"></bean> -->
-    </mvc:interceptors>
+        <bean class="com.frame.system.interceptor.WebInterceptor1"></bean>
+    </mvc:interceptors> -->
     
     <!-- jasperreport 配置 
 	<bean id="jasperReportsViewResolver" class="org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver">  
